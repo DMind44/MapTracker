@@ -83,6 +83,7 @@ public class MapDemoActivity extends AppCompatActivity implements
             mapFragment.getMapAsync(new OnMapReadyCallback() {
                 @Override
                 public void onMapReady(GoogleMap map) {
+                    map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
                     loadMap(map);
                 }
             });
@@ -287,8 +288,10 @@ public class MapDemoActivity extends AppCompatActivity implements
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Define color of marker icon
+//                        BitmapDescriptor defaultMarker =
+//                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN);
                         BitmapDescriptor defaultMarker =
-                                BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN);
+                                BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher);
                         // Extract content from alert dialog
                         String title = ((EditText) alertDialog.findViewById(R.id.etTitle)).
                                 getText().toString();
