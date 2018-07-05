@@ -100,7 +100,7 @@ public class MapDemoActivity extends AppCompatActivity implements
             MapDemoActivityPermissionsDispatcher.getMyLocationWithPermissionCheck(this);
             MapDemoActivityPermissionsDispatcher.startLocationUpdatesWithPermissionCheck(this);
             map.setOnMapLongClickListener(this);
-
+            map.setInfoWindowAdapter(new CustomWindowAdapter(getLayoutInflater()));
         } else {
             Toast.makeText(this, "Error - Map was null!!", Toast.LENGTH_SHORT).show();
         }
